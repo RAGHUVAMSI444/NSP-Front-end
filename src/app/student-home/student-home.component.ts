@@ -28,12 +28,12 @@ export class StudentHomeComponent implements OnInit {
 
   ngOnInit(): void {
     const tid=this.activatedroute.snapshot.paramMap.get('id')
-    //console.log(tid);
+    
     this.studentid=Number(tid);
-    //console.log(this.studentid);
+   
     this.studentservice.getStudent(this.studentid).subscribe((data:IStudent)=>{this.studentdata=data} )
     this.studentservice.checkstatus(this.studentid).subscribe((data:any)=>{
-      //console.log(data)
+      
       this.statusdata=data} )
     
     
@@ -45,9 +45,7 @@ export class StudentHomeComponent implements OnInit {
     this.studentservice.checkInsStatus(this.studentid).subscribe((d)=>{
       console.log(d);
         if(d==true){
-            //this.applied=true;
-            //[routerLink]="['/ScholarshipApplication/', studentid]"
-            //this.router.navigate(['/ScholarshipApplication/',this.studentid])
+            
             this.checkStuApp()
         }
         else{
@@ -61,8 +59,7 @@ export class StudentHomeComponent implements OnInit {
     this.studentservice.checkSchApplication(this.studentid).subscribe((d)=>{
       console.log(d);
         if(d==true){
-            //this.applied=true;
-            //[routerLink]="['/ScholarshipApplication/', studentid]"
+           
             this.router.navigate(['/ScholarshipApplication/',this.studentid])
         }
         else{

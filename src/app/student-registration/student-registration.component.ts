@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CustomValidators } from '../Providers/CustomValidator';
+//import { CustomValidators } from '../Providers/CustomValidator';
 import { StudentService } from '../Services/student.service';
 
 @Component({
@@ -16,19 +16,10 @@ export class StudentRegistrationComponent implements OnInit {
   studentId: number = 0
   pswd:string
   confirmpswd:string
-  // studentdata: IStudent = { name: '', dob: new Date(), gender: '', mobileNumber: '', email: '', instituteCode: 0, aadhaar: '', accountNo: '', bankIFSC: '', bankName: '', password: '' }
+  
   constructor(private formBuilder: FormBuilder, private studentservice: StudentService, private router: Router) { }
 
-  // saveStudent(student: IStudent) {
-
-  //   this.studentdata = student;
-  //   this.studentservice.addStudent(this.studentdata).subscribe((d) => {
-  //     this.studentId = d
-  //     alert("Student Registration successfull. Your Id is " + this.studentId)
-  //     this.router.navigate(['/Home'])
-  //   })
-
-  // }
+  
 
   saveStudent(){
     this.formSubmitted=true;

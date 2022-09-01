@@ -49,11 +49,11 @@ export class InstituteHomeComponent implements OnInit {
 
   ngOnInit(): void {
     const tid = this.activatedroute.snapshot.paramMap.get('id')
-    //console.log(tid)
+    
     this.instituteid = Number(tid);
-    //console.log("institute id = " + this.instituteid)
+   
     this.instituteservice.getInstitute(this.instituteid).subscribe((res) => {
-      //console.log(res)
+      
       this.institutedata=res
       this.load=true
       console.log(this.institutedata)
