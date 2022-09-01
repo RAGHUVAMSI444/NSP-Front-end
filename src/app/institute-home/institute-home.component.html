@@ -1,0 +1,57 @@
+
+<div class="mainInstitutehome">
+    <div id="component" class="container">
+      <div class="container" id="toprightcomponent">
+        <h2 class="display-4 text-center">Welcome, {{ institutedata.name }}</h2>
+        <hr />
+        <div class="card lead">
+          Institute Name : {{ institutedata.name }}<br />
+          Institute Code : {{ institutedata.institutecode }}<br />
+          Type : {{ institutedata.instituteType }}<br />
+          Category : {{ institutedata.instituteCategory }}<br />
+          City : {{ institutedata.city }}<br />
+          State : {{ institutedata.state }}<br />
+          Principal Name : {{ institutedata.principalName }}<br />
+        </div>
+        <div class="card lead">
+          <p  *ngIf="statusdata.approvedByNodalOfficer===1; else Pending1">
+            
+            Nodal Officer Approval : <mark style="background-color:white;color:green;">Approved</mark>
+          
+        </p>
+        <ng-template #Pending1>
+          <p *ngIf="statusdata.approvedByNodalOfficer===0; else Rejected1"> Nodal Officer Approval : <mark style="background-color:white;color:blue;">Pending</mark></p>
+          <ng-template #Rejected1>
+            
+              NodalOfficer Approval : <mark style="background-color:white;color:red;">Rejected</mark>
+            
+          </ng-template>
+        </ng-template>
+      
+        <p  *ngIf="statusdata.approvedByMinistry===1; else Pending2">
+          
+            Ministry Approval : <mark style="background-color:white;color:green;">Approved</mark>
+          
+        </p>
+        <ng-template #Pending2>
+          <p *ngIf="statusdata.approvedByMinistry===0; else Rejected2"> Ministry Approval : <mark style="background-color:white;color:blue;">Pending</mark></p>
+          <ng-template #Rejected2>
+            
+              Ministry Approval : <mark style="background-color:white;color:red;">Rejected</mark>
+            
+          </ng-template>
+        </ng-template>
+        </div>
+        <br />
+        <div class="text-center">
+          <a
+            [routerLink]="['/ApplicationForInstitute/', instituteid]"
+            class="btn btn-primary r1"
+            >Show all Student Applications</a
+          >
+        </div>
+      </div>
+      <br />
+    </div>
+  </div>
+  

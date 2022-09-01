@@ -1,0 +1,176 @@
+
+<div class="mainstudenthome">
+    <div class="h-100 mrgn-rt" id="leftcomponent" style="margin: 50px 50px 50px">
+      <div class="card h-100 container st">
+        <br />
+        <h2 class="text-center">Welcome, {{ studentdata.name }}</h2>
+        <hr />
+        <h4 class="text-center">Details of Student</h4>
+        <hr />
+        <div class="lead">
+          DOB : {{ studentdata.dob }}<br />
+          Gender : {{ studentdata.gender }}<br />
+          Mobile Number : {{ studentdata.mobileNumber }}<br />
+          Email ID : {{ studentdata.email }}<br />
+        </div>
+        <br />
+        <br />
+      </div>
+  
+      <br />
+      <br />
+      <div class="card h-100 container st">
+        <br />
+        <h2 class="text-center">Application Status</h2>
+        <hr />
+        <div class="lead">
+          Application ID : {{ statusdata.applicationId }}<br />
+          <p  *ngIf="statusdata.approvedByInstitute===1; else Pending">
+              Institute Approval : <mark style="background-color:white;color:green;">Approved</mark>
+          </p>
+          <ng-template #Pending>
+            <p *ngIf="statusdata.approvedByInstitute===0; else Rejected">Institute Approval :<mark style="background-color:white;color:blue;">Pending</mark></p>
+            <ng-template #Rejected>
+          
+                Institute Approval : <mark style="background-color:white;color:red;">Rejected</mark>
+      
+            </ng-template>
+          </ng-template>
+      
+          <p  *ngIf="statusdata.approvedByNodalOfficer===1; else Pending1">
+            
+              Nodal Officer Approval : <mark style="background-color:white;color:green;">Approved</mark>
+            
+          </p>
+          <ng-template #Pending1>
+            <p *ngIf="statusdata.approvedByNodalOfficer===0; else Rejected1"> Nodal Officer Approval : <mark style="background-color:white;color:blue;">Pending</mark></p>
+            <ng-template #Rejected1>
+              
+                NodalOfficer Approval : <mark style="background-color:white;color:red;">Rejected</mark>
+              
+            </ng-template>
+          </ng-template>
+        
+          <p  *ngIf="statusdata.approvedByMinistry===1; else Pending2">
+            
+              Ministry Approval : <mark style="background-color:white;color:green;">Approved</mark>
+            
+          </p>
+          <ng-template #Pending2>
+            <p *ngIf="statusdata.approvedByMinistry===0; else Rejected2"> Ministry Approval : <mark style="background-color:white;color:blue;">Pending</mark></p>
+            <ng-template #Rejected2>
+              
+                Ministry Approval : <mark style="background-color:white;color:red;">Rejected</mark>
+              
+            </ng-template>
+          </ng-template>
+          <!-- Nodal Officer Approval : {{ statusdata.approvedByNodalOfficer }}<br />
+          Ministry Approval : {{ statusdata.approvedByMinistry }}<br /> -->
+        </div>
+        <br />
+      </div>
+    </div>
+    <div id="rightcomponent" class="container" style="margin: 50px 50px 50px">
+      <div class="card" id="rightcomponent">
+        <br />
+        <h1 class="text-center"><b>SCHOLARSHIP SCHEMES</b></h1>
+        <hr />
+        <div class="container st">
+          <h3>
+            <u><b>Post Matric Scholarship</b></u>
+          </h3>
+          <br />
+          <b>Objective</b> The Maharashtra DTE Scholarship gives the opportunity
+          to the students belonging to the backwards categories to study in the
+          government and private colleges after completion of their Class 12th.
+          This scheme not only provides the scholarship to study in technical
+          courses but also gives the chance to apply for undergraduate and
+          postgraduate courses in India.
+          <br />
+          <b>Eligibility Criteria</b>
+          <br />
+          Those applicants who are belonging to the economically backward
+          caste/category such as SC/ ST/ OBC or other minorities’ categories are
+          required to check if they come under the eligibility criteria provided
+          by the Directorate of Technical education, Maharashtra Government.
+          <ul>
+            <li>
+              The candidates applying for the Maharashtra Merit Scheme Scholarship
+              2021-2022 must have completed 10th and 12th from a recognized board
+              with a minimum of 60% marks in aggregate.
+            </li>
+            <li>
+              Maximum two members of a family belonging to the minority category
+              can apply for the scholarship.
+            </li>
+            <li>
+              Students applying for the Maharashtra Merit scheme Scholarship
+              20212022 must have Aadhaar Card enrolled in the State.
+            </li>
+            <li>
+              The applicant must produce all the documents prescribed by the
+              state.
+            </li>
+          </ul>
+        </div>
+        <hr />
+        <br />
+        <div class="container st">
+          <h3>
+            <u><b>Pragati Scholarship</b></u>
+          </h3>
+          <br />
+          <ul>
+            <li>
+              ‘One Girl’ per family and it can be extended for Two Girl Child per
+              family where the family income is less than Rs. 8 Lakh /annum (In
+              case of married girl child, the income of parents/ in laws whichever
+              is higher is to be considered).
+            </li>
+            <li>
+              The selection of candidate will be made on merit based on qualifying
+              examination to peruse the respective Technical Degree/Diploma course
+              from any of the AICTE approved institution. Amount of scholarship:
+              Tuition Fee of Rs. 30,000/-.
+            </li>
+          </ul>
+          <br />
+        </div>
+        <hr />
+        <br />
+        <div class="container st">
+          <h3>
+            <u><b>Merit Based Scholarship</b></u>
+          </h3>
+          <br />
+          <p>NTSE (National Talent Search Examination)</p>
+          <b>Eligibility Criteria</b>
+          <br />
+          <ul>
+            <li>Candidates must be an Indian national.</li>
+            <li>
+              A minimum of 60% marks Class IX is required. SC, ST and PH
+              candidates will need 55% marks in Class IX.
+            </li>
+            <li>
+              Candidate must be studying in a recognized school in their
+              respective State .
+            </li>
+          </ul>
+          <br />
+        </div>
+  
+        <br />
+      </div>
+      <br />
+      <div class="text-center">
+        <button class="btn btn-primary" (click)="check()" [disabled]="applied">Apply for Scholarship</button>
+        <!-- <a
+          [routerLink]="['/ScholarshipApplication/', studentid]"
+          class="btn btn-primary" 
+          >Apply For Scholarship</a
+        > -->
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,49 @@
+<p>institute-student-applications works!</p>
+<h2>Application ID : {{application.applicationId}}</h2>
+<hr>
+<div class="container" style="background-color: rgb(197, 197, 197); border-radius: 15px; font-size: 20px;">
+    <p>
+        Student ID : {{application.studentId}}<br>
+        Institute ID : {{application.instituteId}}<br>
+        Religion : {{application.religion}}<br>
+        Comminity : {{application.community}}<br>
+        Fathername : {{application.fathername}}<br>
+        Mothername : {{application.mothername}}<br>
+        Annual Income : {{application.annualIncome}}<br>
+        Institute Name : {{application.instituteId}}<br>
+        Present Course : {{application.presentCourse}}<br>
+        Present Course Year : {{application.presentCourseYear}}<br>
+        Mode of Study : {{application.modeOfStudy}}<br>
+        Class Start Date : {{application.classStartDate}}<br>
+        University Board Name : {{application.universityBoardName}}<br>
+        Previous Course : {{application.previousCourse}}<br>
+        Previous Passing Year : {{application.previousPassingYear}}<br>
+        Previous Course Percentage : {{application.previousCoursePercentage}}<br>
+        10th Roll Number : {{application.rollNumber10th}}<br>
+        10th Board Name : {{application.boardName10th}}<br>
+        10th Passing Year : {{application.passingYear10th}}<br>
+        10th Percentage : {{application.percentage10th}}<br>
+        12th Roll Number : {{application.rollNumber12th}}<br>
+        12th Board Name : {{application.boardName12th}}<br>
+        12th Passing Year : {{application.passingYear12th}}<br>
+        12th Percentage : {{application.percentage12th}}<br>
+        Admission Fee : {{application.admissionFee}}<br>
+        Tuition Fee : {{application.tuitionFee}}<br>
+        Other Fee : {{application.otherFee}}<br>
+        Is Disabled : {{application.isDisabled}}<br>
+        Disability Type : {{application.disabilityType}}<br>
+        Disability Percentage : {{application.disabilityPercentage}}<br>
+        Marital Status : {{application.maritalStatus}}<br>
+        Parents Profession : {{application.parentsProfession}}<br>
+        State : {{application.state}}<br>
+        District : {{application.district}}<br>
+        Address : {{application.address}}<br>
+        Pincode : {{application.pincode}}<br>
+        Scholarship ID : {{application.scholarshipId}}<br>
+    </p>
+      <div class="parent">
+      <button  class="btn btn-success" (click)="approveapplication(application.applicationId)">Approve</button>
+      <button class="btn btn-danger" (click)="rejectapplication(application.applicationId)">Reject</button>
+    </div>
+     
+</div>

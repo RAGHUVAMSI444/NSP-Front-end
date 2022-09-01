@@ -1,0 +1,13 @@
+.mainstudenthome {
+    display: flex;
+  }
+  
+  .card {
+    padding: 50px;
+  }
+  
+  .line{
+
+    display: inline;
+
+}

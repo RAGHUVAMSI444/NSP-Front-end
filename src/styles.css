@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.form-brdr{
+    border-radius: 20px; 
+    margin: 0px 100px 60px;
+    min-height: 450px; 
+    padding: 10px 50px;
+}

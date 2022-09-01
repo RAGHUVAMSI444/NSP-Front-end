@@ -1,0 +1,60 @@
+<div class="card form-brdr">
+  <br />
+  <h1 class="display-4 text-center">Institute Login</h1>
+  <br />
+  <br />
+
+  <div class="container">
+    <form
+      class="form-horizontal"
+      (ngSubmit)="saveLogin(logindata)"
+      #InstituteLoginForm="ngForm"
+    >
+      <div class="form-group row text-center">
+        <label
+          for="inputID"
+          class="col-2 col-form-label"
+          style="font-size: 18px"
+          >Institute Code</label
+        >
+        <div class="col-8">
+          <input
+            type="number"
+            name="InputId"
+            class="form-control"
+            id="inputID"
+            placeholder="Input ID"
+            [(ngModel)]="logindata.Institutecode"
+            required
+            #Institutecode="ngModel"
+          />
+        </div>
+      </div>
+      <div class="form-group row text-center">
+        <label
+          for="inputPassword3"
+          class="col-2 col-form-label"
+          style="font-size: 18px"
+          >Password</label
+        >
+        <div class="col-8">
+          <input
+            type="password"
+            name="Password"
+            class="form-control"
+            id="inputPassword3"
+            placeholder="Password"
+            [(ngModel)]="logindata.Password"
+            required
+            #Password="ngModel"
+          />
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="form-group col text-center">
+        <button type="submit" class="btn btn-primary btn-lg">Log in</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+@media only screen and (min-width: 768px) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
+body {
+  padding: 10px;
+}
+
+.brdr {
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+} 
+
+.col-left{
+  overflow: hidden;
+  min-height: 450px;
+  margin: 0px 0px 70px 0px;
+  box-shadow: 0 0 20px #5555fa;
+  border-radius: 20px;
+  /* width: 10rem; */
+}
+
+.text-size {
+  font-size: 1.25rem;
+}
+.footerfirst{
+  background-color: #2f3235; 
+  color:rgb(120, 123, 108);
+}
+
+.marq {
+  border: 1px solid red;
+  font-weight: bold;
+  color: red;
+  padding: 2px 5px;
+  margin-top: 5px;
+}

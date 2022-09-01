@@ -1,0 +1,426 @@
+<div class="form-brdr justify-content-center align-items-center">
+  <div class="card card-registration" style="border-radius: 15px">
+    <div class="card-body p-4 p-md-5">
+      <h3 class="display-4 text-center">Student Registration Form</h3>
+      <form
+        class="container lead"
+        [formGroup]="studentregistrationform"
+        (ngSubmit)="saveStudent()"
+      >
+        <div class="form-group row">
+          <label for="Name" class="col-4 col-form-label">Name:</label>
+          <div class="col-8">
+            <input
+              placeholder="Name (as per marksheet)"
+              type="text"
+              class="form-control"
+              formControlName="name"
+            />
+            <div
+              *ngIf="
+                formSubmitted &&
+                f.get('name').invalid
+              "
+              class="danger"
+            >
+              Name is required
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="dob" class="col-4 col-form-label"
+            >Date Of Birth:</label
+          >
+          <div class="col-5">
+            <input
+              placeholder="Select Date"
+              type="date"
+              class="form-control"
+              formControlName="dob"
+            />
+          
+          </div>
+        </div>
+
+        <div class="form-group form-check form-check-inline">
+          <label class="col-12 col-form-label row" for="gender"
+            >Gender:</label
+          >
+          <div class="col-8">
+            <input
+              id="male"
+              type="radio"
+              value="male"
+              name="gender"
+              formControlName="gender"
+            />
+
+            <label for="male">Male</label>
+          </div>
+
+          <div class="col-8">
+            <input
+              id="female"
+              type="radio"
+              value="female"
+              name="gender"
+              formControlName="gender"
+            />
+            <label for="female">Female</label>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="MobileNumber" class="col-4 col-form-label"
+            >Mobile Number:</label
+          >
+          <div class="col-5">
+            <input
+              id="MobileNumber"
+              name="MobileNumber"
+              placeholder="XXXXXXXXXX"
+              type="text"
+              class="form-control"
+              formControlName="mobileNumber"
+            />
+          </div>
+          <div
+              *ngIf="formSubmitted &&
+                f.get('mobileNumber').errors?.['maxlength']
+              "
+              class="danger"
+            >
+            
+            Mobile No. must be 10 digits
+            </div>
+            <div
+              *ngIf="formSubmitted &&
+                f.get('mobileNumber').errors?.['minlength']
+              "
+              class="danger"
+            >
+            
+            Mobile No. must be 10 digits
+            </div>
+            <div
+              *ngIf="formSubmitted &&
+                f.get('mobileNumber').errors?.['pattern']
+              "
+              class="danger"
+            >
+            Mobile No. must be  digits
+            </div>
+            <div
+              *ngIf="formSubmitted &&
+                f.get('mobileNumber').errors?.['required']
+              "
+              class="danger"
+            >
+              Mobile No. is required
+            </div>
+            
+          </div>
+        
+
+        <div class="form-group row">
+          <label for="EmailAddress" class="col-4 col-form-label"
+            >Email Address:</label
+          >
+          <div class="col-8">
+            <input
+              type="email"
+              class="form-control"
+              id="EmailAddress"
+              name="email"
+              placeholder="Enter your email"
+              formControlName="email"
+              
+            />
+            <div
+              *ngIf="formSubmitted &&f.get('email').invalid"
+              
+              class="danger"
+            >
+              Enter correct email
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="Institute Code" class="col-4 col-form-label"
+            >Institute Code:</label
+          >
+          <div class="col-3">
+            <input
+              id="Institute Code"
+              name="Institute Code"
+              placeholder="12345"
+              type="number"
+              class="form-control"
+              formControlName="instituteCode"
+            />
+            <div
+              *ngIf="
+                formSubmitted &&
+                f.get('instituteCode').invalid
+              "
+              class="danger"
+            >
+              Institute Code is required is required
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="AadharNumber" class="col-4 col-form-label"
+            >Aadhar Number:</label
+          >
+          <div class="col-8">
+            <input
+              id="AadharNumber"
+              name="AadharNumber"
+              placeholder="XXXX XXXX XXXX"
+              type="text"
+              class="form-control"
+              formControlName="aadhaar"
+            />
+            <div
+              *ngIf="formSubmitted &&
+                f.get('aadhaar').errors?.['maxlength']
+              "
+              class="danger"
+            >
+            
+              Aadhar should must be 12 digits
+            </div>
+            <div
+              *ngIf="formSubmitted &&
+                f.get('aadhaar').errors?.['minlength']
+              "
+              class="danger"
+            >
+            
+            Aadhar should must be 12 digits
+            </div>
+            <div
+              *ngIf="formSubmitted &&
+                f.get('aadhaar').errors?.['pattern']
+              "
+              class="danger"
+            >
+              Aadhar must be digits
+            </div>
+            <div
+              *ngIf="formSubmitted &&
+                f.get('aadhaar').errors?.['required']
+              "
+              class="danger"
+            >
+              Aadhar is required
+            </div>
+            
+          </div>
+          </div>
+        <div class="form-group row">
+          <label for="IFSCCODE" class="col-4 col-form-label"
+            >Bank IFSC Code:</label
+          >
+          <div class="col-8">
+            <input
+              id="IFSCCODE"
+              name="IFSCCODE"
+              placeholder="Enter your IFSC Code"
+              type="text"
+              class="form-control"
+              formControlName="bankIFSC"
+            />
+            <div
+              *ngIf="
+                formSubmitted &&
+                f.get('bankIFSC').invalid
+              "
+              class="danger"
+            >
+              BankIFSC is required
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="BankAccNo" class="col-4 col-form-label"
+            >Bank Account No:</label
+          >
+          <div class="col-8">
+            <input
+              id="BankAccNo"
+              name="BankAccNo"
+              placeholder="Enter your Bank Account No"
+              type="text"
+              class="form-control"
+              formControlName="accountNo"
+            />
+            <div
+              *ngIf="formSubmitted &&
+                f.get('accountNo').errors?.['maxlength']
+              "
+              class="danger"
+            >
+            
+              Account no should be less than 18 digits
+            </div>
+            <div
+              *ngIf="formSubmitted &&
+                f.get('accountNo').errors?.['minlength']
+              "
+              class="danger"
+            >
+            
+              Account no must be atleast 9 digits
+            </div>
+            <div
+              *ngIf="formSubmitted &&
+                f.get('accountNo').errors?.['pattern']
+              "
+              class="danger"
+            >
+              Account no must be digits
+            </div>
+            <div
+              *ngIf="formSubmitted &&
+                f.get('accountNo').errors?.['required']
+              "
+              class="danger"
+            >
+              Account no is required
+            </div>
+            
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="BankName" class="col-4 col-form-label"
+            >Bank Name:</label
+          >
+          <div class="col-8">
+            <input
+              id="BankName"
+              name="BankName"
+              placeholder="Enter the Bank Name"
+              type="text"
+              class="form-control"
+              formControlName="bankName"
+            />
+            <div
+              *ngIf="
+                formSubmitted &&
+                f.get('bankName').invalid
+              "
+              class="danger"
+            >
+              Bank Name is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="SetPassword" class="col-4 col-form-label"
+            >Set Password:</label
+          >
+          <div class="col-8">
+            <input
+              id="SetPassword"
+              name="SetPassword"
+              placeholder="****"
+              type="text"
+              class="form-control"
+              formControlName="password"
+              [(ngModel)]="pswd"
+              
+            />
+            <div
+              *ngIf="
+                formSubmitted &&
+                f.get('password').invalid
+              "
+              class="danger"
+            >
+              Password is required
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="ConfirmPassword" class="col-4 col-form-label"
+            >Confirm Password:</label
+          >
+          <div class="col-8">
+            <input
+              id="ConfirmPassword"
+              name="ConfirmPassword"
+              placeholder="****"
+              type="text"
+              class="form-control"
+              formControlName="confirmPassword"
+              [(ngModel)]="confirmpswd"
+            />
+            <div
+              *ngIf="
+                formSubmitted &&
+                f.get('confirmPassword').invalid
+              "
+              class="danger"
+            >
+              Confirm Password is required.
+            </div>
+            <div
+              *ngIf="
+                formSubmitted &&
+                (pswd!==confirmpswd)
+              "
+              class="danger"
+            >
+              Confirm Password must match with Password.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="exampleCheck1"
+          />
+          <label class="form-check-label" for="exampleCheck1">
+            All the above Information furnished by me is true to the best
+            of my knowledge</label
+          >
+        </div>
+
+        <div class="button-parent">
+          <div class="child form-group row">
+            <div class="offset-4 col-8">
+              <button
+                name="Register"
+                type="submit"
+                class="btn btn-primary"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+
+          <div class="child form-group row">
+            <div class="offset-4 col-8">
+              <button
+                [disabled]="studentregistrationform.invalid"
+                name="reset"
+                type="reset"
+                class="btn btn-primary"
+              >
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

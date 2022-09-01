@@ -1,0 +1,111 @@
+<div class="card login form-brdr">
+  <h1 class="display-4 text-center">Nodal Officer Login</h1>
+  <br />
+  <br />
+  <div class="row justify-content-center align-items-center">
+    <form [formGroup]="nodalloginForm" (ngSubmit)="onFormSubmit()">
+      <div class="form-group">
+        <p>
+          Nodal ID:
+          <input formControlName="ID" class="form-control" />
+          <br />
+          <label
+            *ngIf="
+              nodalloginForm.get('ID')?.invalid &&
+              nodalloginForm.get('ID')?.dirty
+            "
+            class="error"
+          >
+            Nodal ID is required.
+          </label>
+        </p>
+      </div>
+      <div class="form-group">
+        <p>
+          Password :
+          <input
+            type="password"
+            formControlName="Password"
+            class="form-control"
+          />
+        </p>
+      </div>
+      <br />
+      <br />
+      <div class="form-group text-center">
+        <button
+          
+          [disabled]="nodalloginForm.invalid"
+          class="btn btn-primary"
+        >
+          SUBMIT
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div *ngIf="formSubmitted" class="submitted">Login Successful</div>
+<!-- <p>nodal-login works!</p>
+<br />
+<br />
+<div
+  class="card"
+  style="border-radius: 20px; margin: 50px 100px; padding-left: 30px"
+>
+  <br />
+  <h1 class="display-4 text-center">Nodal Officer Login</h1>
+  <br />
+  <br />
+  <form
+    class="form-horizontal"
+    (ngSubmit)="onFormSubmit(logindata)"
+    #studentLoginForm="ngForm"
+  >
+    <div class="form-group row text-center">
+      <label for="NodalId" class="col-2 col-form-label" style="font-size: 18px"
+        >Id</label
+      >
+      <div class="col-8">
+        <input
+          type="text"
+          name="NodalId"
+          class="form-control"
+          id="inputId"
+          placeholder="Enter Your Name"
+          [(ngModel)]="logindata.Name"
+          required
+          #Name="ngModel"
+        />
+      </div>
+    </div>
+    <div class="form-group row text-center">
+      <label
+        for="Password"
+        class="col-2 col-form-label"
+        style="font-size: 18px"
+        >Password</label
+      >
+      <div class="col-8">
+        <input
+          type="password"
+          name="Password"
+          class="form-control"
+          id="Password"
+          placeholder="Enter Your Password"
+          [(ngModel)]="logindata.Password"
+          required
+          #Password="ngModel"
+        />
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="child form-group col text-center">
+      <button name="Login" type="submit" class="btn btn-primary btn-lg">
+        Log In
+      </button>
+    </div>
+  </form>
+</div>
+ -->

@@ -5,6 +5,26 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+
 export class AppComponent {
-  title = 'scholarship-front-end';
+  title = 'NationalScholarshipPortal';
+  constructor() {}
+
+  navbarOpen = false;
+
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
+
+  }
+
+  dropdownOpen = false;
+  toggleDropDown() {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
+
+  dropOpen = false;
+  toggleDrop() {
+    this.dropOpen = !this.dropOpen;
+  }
 }

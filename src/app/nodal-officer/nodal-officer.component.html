@@ -1,0 +1,65 @@
+
+<div class="parent lead">
+    <div class="container child left">
+      <br />
+      <h2 class="display-4">Student Applications</h2>
+      <br />
+      <div class="jumbotron">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="lead">Application ID</th>
+              <th class="lead">Student ID</th>
+              <th class="lead">Scholarship ID</th>
+              <th class="lead">Present Course Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let app of studentdata">
+              <td>{{ app.applicationId }}</td>
+              <td>{{ app.studentId }}</td>
+              <td>{{ app.scholarshipId }}</td>
+              <td>{{ app.presentCourse }}</td>
+              <td>
+                <a [routerLink]="['/NodalSchDetails/', app.applicationId]"
+                  >Details</a
+                >&nbsp;&nbsp;&nbsp;
+              </td>
+              &nbsp;&nbsp;&nbsp;
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="container child right">
+      <br />
+      <h2 class="display-4">Institute Applications</h2>
+      <br />
+      <div class="jumbotron">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="lead">Institute ID</th>
+              <th class="lead">Institute Category</th>
+              <th class="lead">Institute Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let app of institutedata">
+              <td>{{ app.instituteId }}</td>
+              <td>{{ app.instituteCategory }}</td>
+              <td>{{ app.name }}</td>
+  
+              <td>
+                <a [routerLink]="['/NodalInsDetails/', app.instituteId]"
+                  >Details</a
+                >&nbsp;&nbsp;&nbsp;
+              </td>
+              &nbsp;&nbsp;&nbsp;
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

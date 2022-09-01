@@ -1,0 +1,402 @@
+<div class="card form-brdr">
+  <br>
+  <h1 class="text-center">INSTITUTE REGISTRATION FORM</h1>
+  <form class="container r5" [formGroup]="instituteregistrationform" (ngSubmit)="saveInstitute()">
+    <div class="form-group row">
+      <label for="InstituteCategory" class="col-4 col-form-label">Institute Category:</label>
+      <div class="col-3">
+        <input id="InstituteCategory" placeholder="Government or Private" type="text" class="form-control"
+          formControlName="instituteCategory" />
+          <div
+          *ngIf="formSubmitted &&
+            f.get('instituteCategory').errors?.['pattern']
+          "
+          class="danger"
+        >
+        Institute Category must be  character.
+        </div>
+        <div *ngIf="formSubmitted && instituteregistrationform.controls['instituteCategory'].errors!['required']" class="danger">
+          Category is required</div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="Name" class="col-4 col-form-label">Name:</label>
+      <div class="col-8">
+        <input id="Name" placeholder="Enter Institute Name" type="text" class="form-control" formControlName="name" />
+        <div
+          *ngIf="formSubmitted &&
+            f.get('instituteCategory').errors?.['pattern']
+          "
+          class="danger"
+        >
+        Name must be  character.
+        </div>
+        
+        <div *ngIf="formSubmitted && instituteregistrationform.controls['name'].errors!['required']" class="danger">Name
+          is required</div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="Institutecode" class="col-4 col-form-label">Institute Code:</label>
+      <div class="col-2">
+        <input id="Institutecode" placeholder="1234" type="number" class="form-control"
+          formControlName="institutecode" />
+          <div *ngIf="formSubmitted && instituteregistrationform.controls['instituteCategory'].errors!['required']" class="danger"> InstituteCode
+            is required</div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="Disecode" class="col-4 col-form-label">DISE Code:</label>
+      <div class="col-2">
+        <input id="Disecode" placeholder="1234" type="number" class="form-control" formControlName="disecode" />
+        <div *ngIf="formSubmitted && instituteregistrationform.controls['instituteCategory'].errors!['required']" class="danger">DISE code
+          is required</div>
+      </div>
+    </div>
+    <br />
+    <div class="form-group form-check form-check-inline">
+      <label class="col-12 col-form-label row" for="location">Location:</label>
+      <div class="offset-8 col-12">
+        <input class="form-check-input" id="Urban" type="radio" value="Urban" formControlName="location" />
+        <label for="Urban">Urban</label>
+      </div>
+
+      <div class="col-12">
+        <input class="form-check-input" id="Rural" type="radio" value="Rural" formControlName="location" />
+        <label for="Rural">Rural</label>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="InstituteType" class="col-4 col-form-label">Institute Type:</label>
+      <div class="col-3">
+        <input id="InstituteType" placeholder="Eng/Medical/Business" type="text" class="form-control"
+          formControlName="instituteType" />
+          <div
+          *ngIf="formSubmitted &&
+            f.get('instituteType').errors?.['pattern']
+          "
+          class="danger"
+        >
+        Institute TYPE  must be  character.
+        </div>
+        <div *ngIf="formSubmitted && instituteregistrationform.controls['instituteType'].errors!['required']" class="danger">
+          Type is required</div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="AffiliatedState" class="col-4 col-form-label">Affiliated State:</label>
+      <div class="col-6">
+        <input id="AffiliatedState" placeholder="Enter the Affiliated State" type="text" class="form-control"
+          formControlName="affiliatedState" />
+          <div
+          *ngIf="formSubmitted &&
+            f.get('affiliatedState').errors?.['pattern']
+          "
+          class="danger"
+        >
+        Affiliated State must be  character.
+        </div>
+        
+          <div *ngIf="formSubmitted && instituteregistrationform.controls['affiliatedState'].errors!['required']" class="danger">Affiliated State 
+            is required</div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="AffiliatedName" class="col-4 col-form-label">Affiliated Name:</label>
+      <div class="col-8">
+        <input id="AffiliatedName" placeholder="Name of University" type="text" class="form-control"
+          formControlName="affiliatedName" />
+          <div
+          *ngIf="formSubmitted &&
+            f.get('affiliatedName').errors?.['pattern']
+          "
+          class="danger"
+        >
+        Affiliated Name must be  character.
+        </div>
+        
+          <div *ngIf="formSubmitted && instituteregistrationform.controls['affiliatedName'].errors!['required']" class="danger">Affiliated Name
+            is required</div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="AdmissionStartYear" class="col-4 col-form-label">Admission Start Year:</label>
+      <div class="col-2">
+        <input id="AdmissionStartYear" placeholder="XXXX" type="text" class="form-control"
+          formControlName="admissionStartYear" />
+          <div
+              *ngIf="formSubmitted &&
+                f.get('admissionStartYear').errors?.['maxlength']
+              "
+              class="danger"
+            >
+            
+            AdmissionStartYear must be 4 digits
+            </div>
+            <div
+              *ngIf="formSubmitted &&
+                f.get('admissionStartYear').errors?.['minlength']
+              "
+              class="danger"
+            >
+            
+            AdmissionStartYear must be 4 digits
+            </div>
+            <div
+              *ngIf="formSubmitted &&
+                f.get('admissionStartYear').errors?.['pattern']
+              "
+              class="danger"
+            >
+            AdmissionStartYear must be digit
+            </div>
+            <div
+              *ngIf="formSubmitted &&
+                f.get('admissionStartYear').errors?.['required']
+              "
+              class="danger"
+            >
+            AdmissionStartYear is required
+            </div>
+            
+        
+          
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="Password" class="col-4 col-form-label">Password:</label>
+      <div class="col-6">
+        <input id="Password" placeholder="**" type="text" class="form-control" formControlName="password" />
+      
+      <div *ngIf="formSubmitted && instituteregistrationform.controls['password'].errors!['required']" class="danger">Password
+        is required</div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="ConfirmPassword" class="col-4 col-form-label">Confirm Password</label>
+      <div class="col-6">
+        <input id="ConfirmPassword" placeholder="**" type="text" class="form-control" required />
+      </div>
+    </div>
+    <hr />
+
+    <div class="form-group row">
+      <label for="ProofofExistence" class="col-4 col-form-label">
+        Proof of Existance of Institute:
+        <br />
+      </label>
+      <div class="col-8">
+        <input class="form-control form-control-md" id="formFileLg" type="file" />
+        <div class="small text-muted mt-2">
+          PDF of Institute Establishment/Registration Certificate
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="form-group row">
+      <label for="AffiliatedTo" class="col-4 col-form-label">
+        Affiliated To:
+        <br />
+      </label>
+      <div class="col-8">
+        <input class="form-control form-control-md" id="formFileLg" type="file" />
+        <div class="small text-muted mt-2">
+          PDF of Unviersity/Board Affiliation Certificate
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="form-group row">
+      <label for="Address" class="col-4 col-form-label">Address:</label>
+      <div class="col-6">
+        <textarea id="Address" placeholder="Enter Complete Address" type="text" class="form-control"
+          formControlName="address" rows="4">
+        </textarea>
+        <div *ngIf="formSubmitted && instituteregistrationform.controls['address'].errors!['required']" class="danger">Address 
+          is required</div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="City" class="col-4 col-form-label">City:</label>
+      <div class="col-6">
+        <input id="City" placeholder="Enter the City" type="text" class="form-control" formControlName="city" />
+        <div
+        *ngIf="formSubmitted &&
+          f.get('city').errors?.['pattern']
+        "
+        class="danger"
+      >
+      City must be  character.
+      </div>
+      
+        <div *ngIf="formSubmitted && instituteregistrationform.controls['city'].errors!['required']" class="danger">City
+          is required</div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="State" class="col-4 col-form-label">State:</label>
+      <div class="col-6">
+        <input id="State" placeholder="Enter the State" type="text" class="form-control" formControlName="state" />
+        <div
+        *ngIf="formSubmitted &&
+          f.get('state').errors?.['pattern']
+        "
+        class="danger"
+      >
+      State must be  character.
+      </div>
+      
+        <div *ngIf="formSubmitted && instituteregistrationform.controls['state'].errors!['required']" class="danger">State 
+          is required</div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="District" class="col-4 col-form-label">District:</label>
+      <div class="col-6">
+        <input id="District" placeholder="Enter the District" type="text" class="form-control"
+          formControlName="district" />
+          <div
+          *ngIf="formSubmitted &&
+            f.get('district').errors?.['pattern']
+          "
+          class="danger"
+        >
+        District must be  character.
+        </div>
+        
+          <div *ngIf="formSubmitted && instituteregistrationform.controls['district'].errors!['required']" class="danger">District 
+            is required</div>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <label for="Pincode" class="col-4 col-form-label">Pincode:</label>
+      <div class="col-4">
+        <input id="Pincode" placeholder="Enter Pincode" type="text" class="form-control"
+          formControlName="pincode" />
+          <div
+              *ngIf="formSubmitted &&
+                f.get('pincode').errors?.['maxlength']
+              "
+              class="danger"
+            >
+            
+            Pincode must be 6 digits
+            </div>
+            <div
+              *ngIf="formSubmitted &&
+                f.get('pincode').errors?.['minlength']
+              "
+              class="danger"
+            >
+            
+            Pincode must be 6 digits
+            </div>
+            <div
+              *ngIf="formSubmitted &&
+                f.get('pincode').errors?.['pattern']
+              "
+              class="danger"
+            >
+           Pincode must be  digits
+            </div>
+            <div
+              *ngIf="formSubmitted &&
+                f.get('pincode').errors?.['required']
+              "
+              class="danger"
+            >
+              Pincode is required
+            </div>
+            
+          
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="PrincipalName" class="col-4 col-form-label">Principal Name:</label>
+      <div class="col-4">
+        <input id="PrincipalName" placeholder="Enter Principal Name" type="text" class="form-control"
+          formControlName="principalName" />
+          <div
+          *ngIf="formSubmitted &&
+            f.get('principalName').errors?.['pattern']
+          "
+          class="danger"
+        >
+        Principal Name must be  character.
+        </div>
+          <div *ngIf="formSubmitted && instituteregistrationform.controls['principalName'].errors!['required']" class="danger">Principal Name
+            is required</div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="PrincipalNumber" class="col-4 col-form-label">Principal Number:</label>
+      <div class="col-4">
+        <input id="PrincipalNumber" placeholder="Enter Principal Mobile Number" type="text" class="form-control"
+          formControlName="principalNumber" />
+          <div
+              *ngIf="formSubmitted &&
+                f.get('principalNumber').errors?.['maxlength']
+              "
+              class="danger"
+            >
+            
+            Mobile No. must be 10 digits
+            </div>
+            <div
+              *ngIf="formSubmitted &&
+                f.get('principalNumber').errors?.['minlength']
+              "
+              class="danger"
+            >
+            
+            Mobile No. must be 10 digits
+            </div>
+            <div
+              *ngIf="formSubmitted &&
+                f.get('principalNumber').errors?.['pattern']
+              "
+              class="danger"
+            >
+            Mobile No. must be  digits
+            </div>
+            <div
+              *ngIf="formSubmitted &&
+                f.get('principalNumber').errors?.['required']
+              "
+              class="danger"
+            >
+              Mobile No. is required
+            </div>
+            
+          <div *ngIf="formSubmitted && instituteregistrationform.controls['principalNumber'].errors!['required']" class="danger">Principal Number 
+            is required</div>
+      </div>
+    </div>
+    <br />
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+      <label class="form-check-label" for="exampleCheck1">
+        All the details and documents submitted by us are valid and true. If
+        found guilty of submitting invalid documents we may be held responsible
+        for that act by us.</label>
+    </div>
+    <br />
+    <div class="button-parent">
+      <div class="child form-group row">
+        <div class="offset-4 col-4">
+          <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+      </div>
+
+      <div class="child form-group row">
+        <div class="offset-4 col-4">
+          <button type="reset" class="btn btn-primary">Reset</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,30 @@
+<p>ministry-ins-details works!</p>
+<h2>Institute ID : {{application.instituteId}}</h2>
+<hr>
+<div class="container" style="background-color: rgb(197, 197, 197); border-radius: 15px; font-size: 20px;">
+    <p>
+        Institute ID : {{application.instituteId}}<br>
+        Category : {{application.instituteCategory}}<br>
+        Institute Name : {{application.name}}<br>
+        Institute Code : {{application.institutecode}}<br>
+        DISE Code : {{application.disecode}}<br>
+        Location : {{application.location}}<br>
+        Institute Type : {{application.instituteType}}<br>
+        Affiliated State : {{application.affiliatedState}}<br>
+        Affiliated Name : {{application.affiliatedName}}<br>
+        Password : {{application.password}}<br>
+        Address : {{application.address}}<br>
+        City : {{application.city}}<br>
+        State : {{application.state}}<br>
+        District : {{application.district}}<br>
+        Pincode : {{application.pincode}}<br>
+        Principal Name : {{application.principalName}}<br>
+        Principal Number : {{application.principalNumber}}<br>
+        
+    </p>
+    
+      <div class="parent">
+      <button class="btn btn-success" (click)="approveapplication(application.instituteId)">Approve</button>
+      <button class="btn btn-danger" (click)="rejectapplication(application.instituteId)">Reject</button>
+    </div> 
+</div> 

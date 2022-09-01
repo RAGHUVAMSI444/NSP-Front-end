@@ -1,0 +1,27 @@
+
+<div class="container">
+    <h3 class="text-danger">Application Listing</h3>
+    <div class="jumbotron">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Application ID</th>
+                    <th>Student ID</th>
+                    <th>Scholarship ID</th>
+                    <th>Present Course Name</th>
+                </tr>
+                
+            </thead>
+            <tbody>
+                <tr *ngFor="let app of application">
+                    <td>{{app.applicationId}}</td>
+                    <td>{{app.studentId}}</td>
+                    <td>{{app.scholarshipId}}</td>
+                    <td>{{app.presentCourse}}</td>
+                    <td><a [routerLink]="['/InstituteStudentApplication/',app.applicationId]">Details</a>&nbsp;&nbsp;&nbsp;
+                    </td>&nbsp;&nbsp;&nbsp;
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
